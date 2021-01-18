@@ -6,12 +6,14 @@ pipeline {
      stages {
          stage('build') {
              steps {
-                    withEnv(["HOME=${env.WORKSPACE}"]) {
-                         sh 'pip install flask --user'
-                         sh 'pip install boto3 --user'
-                         sh 'pip install requests --user'
+                    
+                        withEnv(["HOME=${env.WORKSPACE}"]) {
+                                 sh 'pip install flask --user'
+                                 sh 'pip install boto3 --user'
+                                 sh 'pip install requests --user'
+                             
+                    }
 
-                     }
                  }
          }
          stage('test') {
